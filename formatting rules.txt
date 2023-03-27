@@ -1,0 +1,15 @@
+# narration
+> choice menu
+$$ scene transition
+Name: Speech
+[NAME: SPRITE]
+
+
+Suggested changes:
+?Name: Thought
+
+
+If the line contains yellow, red, or green text, it needs to be coloured manually.
+Suggestion: Put some indication that the line needs to be done manually.
+
+@@ line that needs to be reviewed
