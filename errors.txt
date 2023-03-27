@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 1028: 'with' is not a keyword argument or valid child for the imagemap statement.
+    with dissolve       
+        ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Fri Jan 20 20:21:01 2023
