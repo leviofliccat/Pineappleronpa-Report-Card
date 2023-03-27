@@ -1,8 +1,10 @@
 # The bathroom door squeaks open as Sean wobbles out. He uses his hand on the wall for support.
-
+$$ Living room
 ?Reader: Woah! What happened?
 
 Reader: A- Are you okay?
+
+Reader: Goddamn!
 
 Sean: Oh Reader! You caught me at a bad time…
 
@@ -15,6 +17,7 @@ Sean: Oh Reader! You caught me at a bad time…
 
 > Get me out!
 # I try to close the game...
+$$ Kitchen
 @@# But this line needs to be reviewed.
 
 [SEAN: SMIRK]
