@@ -1,5 +1,6 @@
 
 ## need to Check use with question marks quotation marks, slashes, etc... still not 100% but pretty solid so far
+## trying to do indents
 
 ## This program successfully:
     # Removes all extra spaces in the script before formatting
@@ -68,9 +69,11 @@ blue = "{color=#2D70D6}"
 ## Document preparation
 ##############################################################
 
-# Import functions that replace colons.
+# Import functions.
 from exp import colons_in_dialogue
 from exp import colons_in_plain_text
+from tab_parse import parse_tree
+from tab_parse import run_parse
 
 # Define a function that removes all extra spaces in a string.
 def remove_all_extra_spaces(string):
@@ -97,7 +100,8 @@ while("" in chat_script):
 
 # For each line in the script, take the line, turn it into a string, 
 # split up speaker and speech, identify type, then sort into lists.
-
+temp =[]
+scanned = False
 character_names = ["Reader", "Luke", "David", "Sean", "Julian", "Riley", "Mitch", "Will", "Johan", "Mel", "Felicity"]
 list_character_names = [reader, luke, david, sean, julian, riley, mitch, will, johan, mel, felicity]
 i = 0
@@ -114,9 +118,24 @@ while i < len(chat_script):
             name.append(remove_all_extra_spaces(colons_in_dialogue(values)[1]))
         x=x+1
 
+    if chat_script[i].startswith('    >') and scanned == False:
+        x = i
+        while x < len(chat_script):
+            if chat_script[x].startswith('    '):
+                if x != i and chat_script[x].startswith('    >'):
+                    break
+                else:
+                    temp.append(chat_script[x])
+
+            x = x+1
+        scanned = True
+        result = run_parse(temp)
+        print(result)
+    
+
     if chat_script[i].startswith("?") == True:
-        blue_text.append(colons_in_plain_text(values)[0])
-    elif chat_script[i].startswith("\t") == True or chat_script[i].startswith("@@") == True:
+        blue_text.append(colons_in_dialogue(values)[1])
+    elif chat_script[i].startswith("@@") == True:
         review.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
     elif chat_script[i].startswith("[") == True:
         expression_change.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
@@ -125,29 +144,8 @@ while i < len(chat_script):
     elif chat_script[i].startswith("#"):
         narration.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
     
-        
+    # print(chat_script[i])    
     i=i+1
-
-
-
-# i = 0
-# while i < len(chat_script):                                                    ## This needs to be made more efficient; nested loops
-#     values = chat_script[i].split(": ")
-
-#     if values[0] == "Sean": 
-#         # calling the function to put colons back in if they were removed.
-#         sean.append(remove_all_extra_spaces(colons_in_dialogue(values)[1]))
-
-#     elif values[0] == "Reader":
-#         reader.append(remove_all_extra_spaces(colons_in_dialogue(values)[1]))
-
-#     else:
-#         if chat_script[i].startswith("?") == True:
-#             blue_text.append(colons_in_plain_text(values)[0])
-
-#         else:
-#             narration.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
-#     i=i+1
 
 
 # Create empty lists for formatted lines and define character objects.                  
@@ -192,24 +190,12 @@ while i < len(character_names):
 
 
 
-# x = 0
-# while x < len(sean):
-#     speech = "\"" + sean[x] + "\""
-#     renpy_sean.append(sean_object + " " + speech)
-#     x = x+1        
-
-# x=0
-# while x<len(reader):
-#     speech = "\"" + reader[x] + "\""
-#     renpy_reader.append(reader_object + " " + speech)
-#     x=x+1
-
-# Blue text format removes the quesiton mark, and changes the colour to blue (in-engine).
+# Blue text format removes the quesiton mark, and changes the colour to blue (in-engine). 
 x=0
 while x<len(blue_text):
-    first_char = ((blue_text[x])[0])[0]
-    cleaned_blue_text = blue_text[x].replace(first_char, "")
-    renpy_blue_text.append("\"" + blue + remove_all_extra_spaces(cleaned_blue_text) + "{/color}\"")
+    # first_char = ((blue_text[x])[0])[0]
+    # cleaned_blue_text = blue_text[x].replace(first_char, "")
+    renpy_blue_text.append("\"" + blue + blue_text[x] + "{/color}\"")
     x=x+1
 
 x=0
