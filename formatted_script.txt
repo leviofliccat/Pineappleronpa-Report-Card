@@ -2,16 +2,10 @@
 scene living room
 "{color=#2D70D6}Reader: Woah! What happened{/color}"
 r "A- Are you okay?"
-r "Goddamn!"
+r "Earlier you said "I never shit!"."
 s "Oh Reader! You caught me at a bad time…"
 "{color=#2D70D6}Reader: Why is he rubbing his stomach like that{/color}"
->>>!!!REVIEW FORMATTING!!! "> I don't like this.."
->>>!!!REVIEW FORMATTING!!! "@@Reader: Please save me."
-"{color=#2D70D6}Reader: I don't know what to do...{/color}"
-"The world ends."
->>>!!!REVIEW FORMATTING!!! "> Get me out!"
-"I try to close the game..."
-scene kitchen
->>>!!!REVIEW FORMATTING!!! "@@# But this line needs to be reviewed."
 show sean smirk
 show reader sad
+"Riley is trying to kick in the door of one of the wall lockers whilst Felicity watches at a distance."
+l "Fuck you."

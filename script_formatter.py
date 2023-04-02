@@ -1,12 +1,12 @@
 
-## need to Check use with quotation marks, slashes, etc... still not 100% but pretty solid so far
+## need to Check use with question marks quotation marks, slashes, etc... still not 100% but pretty solid so far
 
 ## This program successfully:
     # Removes all extra spaces in the script before formatting
     # Removes extra line spaces
     # Understands dialogue as Speaker: Speech format
     # Understands narration as starting with #
-    # Currently formats blue text with the colour #2D70D6 and understands it as starting with ?
+    # Currently formats blue text with the colour and understands it as starting with ?
     # Preserves lines starting with > and @@ for manual review
     # Understands [NAME: EXPRESSION]
     # Understands scene changes as starting with $$
@@ -60,6 +60,10 @@ object_codes = {
     "felicity_object" : "f"
 }
 
+## Colour of blue text
+
+blue = "{color=#2D70D6}"
+
 ##############################################################
 ## Document preparation
 ##############################################################
@@ -112,7 +116,7 @@ while i < len(chat_script):
 
     if chat_script[i].startswith("?") == True:
         blue_text.append(colons_in_plain_text(values)[0])
-    elif chat_script[i].startswith(">") == True or chat_script[i].startswith("@@") == True:
+    elif chat_script[i].startswith("\t") == True or chat_script[i].startswith("@@") == True:
         review.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
     elif chat_script[i].startswith("[") == True:
         expression_change.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
@@ -120,6 +124,7 @@ while i < len(chat_script):
         scene_transition.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
     elif chat_script[i].startswith("#"):
         narration.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
+    
         
     i=i+1
 
@@ -204,7 +209,7 @@ x=0
 while x<len(blue_text):
     first_char = ((blue_text[x])[0])[0]
     cleaned_blue_text = blue_text[x].replace(first_char, "")
-    renpy_blue_text.append("\"{color=#2D70D6}" + remove_all_extra_spaces(cleaned_blue_text) + "{/color}\"")
+    renpy_blue_text.append("\"" + blue + remove_all_extra_spaces(cleaned_blue_text) + "{/color}\"")
     x=x+1
 
 x=0
