@@ -72,7 +72,6 @@ blue = "{color=#2D70D6}"
 # Import functions.
 from exp import colons_in_dialogue
 from exp import colons_in_plain_text
-from tab_parse import parse_tree
 from tab_parse import run_parse
 
 # Define a function that removes all extra spaces in a string.
@@ -256,17 +255,6 @@ for line in chat_script:
         final_script.append(renpy_narration.pop(0))
 
 
-
-    # if line.startswith("Sean:") == True:
-    #     final_script.append(renpy_sean.pop(0)) 
-    #     # Removes the first item from the dialogue list and adds it to the final_script list.
-    # elif line.startswith("Reader:") == True:
-    #     final_script.append(renpy_reader.pop(0)) 
-    # elif line.startswith("*") == True and line.endswith("*") == True:
-    #     final_script.append(renpy_blue_text.pop(0))
-    # else:
-    #     final_script.append(renpy_narration.pop(0)) 
-    
 
 
 ## Code to write the formatted script into a text file.
