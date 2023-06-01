@@ -27,22 +27,23 @@ myDict = {
 
 def run_parse(raw):
 
-    for level, name, parent in parse_tree(raw):
+    for level, line, parent in parse_tree(raw):
         # print('{0}{1} ( {2} )'.format(' ' * (4 * level), name, parent or 'root'))
         if level == 0:
-            choice_name = name
+            option_name = '(Option)' + line
             dialogue = []
+            myDict[option_name] = dialogue
         if level == 1:            
-            if name.startswith('>'):
-                nested_choice = '(Nested)' + name
+            if line.startswith('>'):
+                nested_name = '(Nested)' + line
                 dialogue_nested = []
-                myDict[nested_choice] = dialogue_nested
+                myDict[nested_name] = dialogue_nested
             else:
-                dialogue.append(name)
-            myDict[choice_name] = dialogue
+                dialogue.append(line)
+                myDict[option_name] = dialogue
     
         if level == 2: 
-            dialogue_nested.append(name)
+            dialogue_nested.append(line)
     return myDict
         
 

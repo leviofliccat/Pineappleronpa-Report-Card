@@ -43,6 +43,8 @@ expression_change = []
 blue_text = []
 narration = []
 review = []
+options = []
+nested = []
 
 ## Ensure the desired character object codes to be used in the game's dialogue code are consistent:
 object_codes = {
@@ -69,10 +71,26 @@ blue = "{color=#2D70D6}"
 ## Document preparation
 ##############################################################
 
+def check(line):
+    if line.startswith("?") == True:
+        blue_text.append(colons_in_dialogue(values)[1])
+    elif line.startswith("@@") == True:
+        review.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
+    elif line.startswith("[") == True:
+        expression_change.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
+    elif line.startswith("$$") == True:
+        scene_transition.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
+    elif line.startswith("#"):
+        narration.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
+    
+
+
 # Import functions.
 from exp import colons_in_dialogue
 from exp import colons_in_plain_text
 from tab_parse import run_parse
+from trial import list_from_dict
+from trial import b_list_from_dict
 
 # Define a function that removes all extra spaces in a string.
 def remove_all_extra_spaces(string):
@@ -99,8 +117,8 @@ while("" in chat_script):
 
 # For each line in the script, take the line, turn it into a string, 
 # split up speaker and speech, identify type, then sort into lists.
-temp =[]
-scanned = False
+temp = []
+scanned = False #scans for all options once, then never again
 character_names = ["Reader", "Luke", "David", "Sean", "Julian", "Riley", "Mitch", "Will", "Johan", "Mel", "Felicity"]
 list_character_names = [reader, luke, david, sean, julian, riley, mitch, will, johan, mel, felicity]
 i = 0
@@ -119,32 +137,20 @@ while i < len(chat_script):
 
     if chat_script[i].startswith('    >') and scanned == False:
         x = i
-        while x < len(chat_script):
+        while x < len(chat_script):           
             if chat_script[x].startswith('    '):
-                if x != i and chat_script[x].startswith('    >'):
-                    break
-                else:
-                    temp.append(chat_script[x])
-
+                temp.append(chat_script[x])
             x = x+1
         scanned = True
         result = run_parse(temp)
-        print(result)
-    
+        nested = list_from_dict(result)
+        options = b_list_from_dict(result)
+        check(nested[x]) # help
 
-    if chat_script[i].startswith("?") == True:
-        blue_text.append(colons_in_dialogue(values)[1])
-    elif chat_script[i].startswith("@@") == True:
-        review.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
-    elif chat_script[i].startswith("[") == True:
-        expression_change.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
-    elif chat_script[i].startswith("$$") == True:
-        scene_transition.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
-    elif chat_script[i].startswith("#"):
-        narration.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
-    
-    # print(chat_script[i])    
+    check(chat_script[i])
+     
     i=i+1
+
 
 
 # Create empty lists for formatted lines and define character objects.                  
@@ -166,6 +172,8 @@ renpy_expression_change = []
 renpy_blue_text = []
 renpy_narration = []
 renpy_review = []
+renpy_nested = []
+renpy_options = []
 
 list_renpy_names = [renpy_reader, renpy_luke, renpy_david, renpy_sean, renpy_julian, renpy_riley, renpy_mitch, renpy_will, renpy_johan, renpy_mel, renpy_felicity]
 # Formatting by adding quotation marks to dialogue and adding the 
@@ -212,6 +220,19 @@ while x<len(review):
     x=x+1
 
 x=0
+while x<len(nested):
+    i = 0
+    while i < len(nested[x]):       
+        renpy_nested.append("   \"" + nested[x][i] + "\"")
+        i=i+1
+    x=x+1
+
+x=0
+while x<len(options):
+    renpy_options.append("\"" + options[x] + "\":")
+    x=x+1
+
+x=0
 while x<len(scene_transition):
     cleaned_scene = (scene_transition[x])[3:]             ## review syntax
     renpy_scene_transition.append("scene " + str(cleaned_scene).lower())
@@ -245,15 +266,18 @@ for line in chat_script:
 
     if line.startswith("?") == True:
         final_script.append(renpy_blue_text.pop(0))
-    elif line.startswith(">") == True or line.startswith("@@") == True:
+    elif line.startswith("@@") == True:
         final_script.append(renpy_review.pop(0))
+    elif line.startswith("    >") == True or line.startswith("        >") == True:
+        final_script.append(renpy_options.pop(0))
+    elif line.startswith("        ") == True:   
+        final_script.append(renpy_nested.pop(0))
     elif line.startswith("[") == True:
         final_script.append(renpy_expression_change.pop(0))
     elif line.startswith("$$") == True:
         final_script.append(renpy_scene_transition.pop(0))
     elif line.startswith("#") == True:
         final_script.append(renpy_narration.pop(0))
-
 
 
 
