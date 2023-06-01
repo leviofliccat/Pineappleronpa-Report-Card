@@ -1,0 +1,34 @@
+"The bathroom door squeaks open as Sean wobbles out. He uses his hand on the wall for support."
+scene living room
+"{color=#2D70D6}Woah! What happened?{/color}"
+r "A- Are you okay?"
+r "Earlier you said "I never shit!"."
+s "Oh Reader! You caught me at a bad time…"
+"{color=#2D70D6}Why is he rubbing his stomach like that?{/color}"
+"(Option)>I don't like this..":
+   "@@Reader: Please save me."
+   "{color=#2D70D6}Reader: I don't know what to do...{/color}"
+   "The world ends."
+"(Nested)>Hi":
+   "NOOOO"
+   "Reader: hehehe"
+"(Option)>Get me out!":
+   "I try to close the game..."
+   "scene Kitchen"
+   "@@But this line needs to be reviewed."
+show sean smirk
+show reader sad
+"Riley is trying to kick in the door of one of the wall lockers whilst Felicity watches at a distance."
+"(Option)>Talk to Riley":
+   "Awkwardly I walk past Felicity."
+   "I receive a mild smile and nod as I pass."
+   "Riley: Fuckin’ rat dog!"
+l "Fuck you."
+"(Option)>"Fuck me yourself coward."":
+   "Reader: You can, uh, fuck me yourself."
+   "Reader: ...coward."
+"(Option)>Piss and shit a little.":
+   "I feel my pants moisten."
+   "Reader: I fucking hate myself."
+"(Nested)>Help me!":
+   "Nobody answers."
