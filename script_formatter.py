@@ -72,7 +72,7 @@ blue = "{color=#2D70D6}"
 ##############################################################
 
 def check(line):
-    if line.startswith("?") == True:
+    if line.lstrip().startswith("?") == True:
         blue_text.append(colons_in_dialogue(values)[1])
     elif line.startswith("@@") == True:
         review.append(remove_all_extra_spaces(colons_in_plain_text(values)[0]))
@@ -145,13 +145,12 @@ while i < len(chat_script):
         result = run_parse(temp)
         nested = list_from_dict(result)
         options = b_list_from_dict(result)
-        check(nested[x]) # help
 
     check(chat_script[i])
      
     i=i+1
 
-
+print(review)
 
 # Create empty lists for formatted lines and define character objects.                  
 

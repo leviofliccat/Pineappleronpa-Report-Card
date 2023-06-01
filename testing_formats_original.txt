@@ -1,23 +1,43 @@
-    >Option 1
-        @@dialogue1.1
-        dialogue1.2
-        dialogue1.3
-        >Option1.1
-            dialogue1.1.1
-            dialogue1.1.2
+# The bathroom door squeaks open as Sean wobbles out. He uses his hand on the wall for support.
+$$ Living room
+?Reader: Woah! What happened?
 
-    >Option 2
-        dialogue2.1
-        dialogue2.2
-        dialogue2.3
+Reader: A- Are you okay?
 
-    >Option 3
-        dialogue3.1
+Reader: Earlier you said "I never shit!".
 
-    >Option 4
-        dialogue4.1
-        dialogue4.2
-    >Option 5
-        dialogue5.1
-        >Option5.1
-            dialogue5.1.1
+Sean: Oh Reader! You caught me at a bad time…
+
+?Reader: Why is he rubbing his stomach like that?
+
+    >I don't like this..
+        @@Reader: Please save me.
+        ?Reader: I don't know what to do...
+        # The world ends.
+        >Hi
+            # NOOOO
+            Reader: hehehe
+
+    >Get me out!
+        # I try to close the game...
+        $$ Kitchen
+        @@# But this line needs to be reviewed.
+
+[SEAN: SMIRK]
+[READER: SAD]
+
+# Riley is trying to kick in the door of one of the wall lockers whilst Felicity watches at a distance.
+    >Talk to Riley
+        # Awkwardly I walk past Felicity.
+        # I receive a mild smile and nod as I pass.
+        Riley: Fuckin’ rat dog!
+
+Luke: Fuck you.
+    >"Fuck me yourself coward."
+        Reader: You can, uh, fuck me yourself.
+        Reader: ...coward.
+    >Piss and shit a little.
+        # I feel my pants moisten.
+        Reader: I fucking hate myself.
+        >Help me!
+            # Nobody answers.
