@@ -5,20 +5,19 @@ $$ Living room
 Reader: A- Are you okay?
 
 Reader: Earlier you said "I never shit!".
-
 Sean: Oh Reader! You caught me at a bad time…
 
 ?Reader: Why is he rubbing his stomach like that?
 
-    >I don't like this..
+>I don't like this..
         @@Reader: Please save me.
         ?Reader: I don't know what to do...
         # The world ends.
-        >Hi
+>Hi
             # NOOOO
             Reader: hehehe
 
-    >Get me out!
+>Get me out!
         # I try to close the game...
         $$ Kitchen
         @@# But this line needs to be reviewed.
