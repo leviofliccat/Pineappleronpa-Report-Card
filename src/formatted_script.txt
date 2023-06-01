@@ -1,34 +1,34 @@
 "The bathroom door squeaks open as Sean wobbles out. He uses his hand on the wall for support."
 scene Living room
-r "{color=#2D70D6}Woah! What happened?{/color}"
+"{color=#2D70D6}Woah! What happened?{/color}"
 r "A- Are you okay?"
 r "Earlier you said 'I never shit!'."
 s "Oh Reader! You caught me at a bad time…"
-r "{color=#2D70D6}Why is he rubbing his stomach like that?{/color}"
+"{color=#2D70D6}Why is he rubbing his stomach like that?{/color}"
 "(Option)>I don't like this..":
-   r "@@Please save me."
-   r "{color=#2D70D6}I don't know what to do...{/color}"
-   "The world ends."
+    r "@@Please save me."
+    "{color=#2D70D6}I don't know what to do...{/color}"
+    "The world ends."
 "(Nested)>Hi":
-   "NOOOO"
-   r "hehehe"
+    "NOOOO"
+    r "hehehe"
 "(Option)>Get me out!":
-   "I try to close the game..."
-   scene Kitchen
-   "@@But this line needs to be reviewed."
+    "I try to close the game..."
+    scene Kitchen
+    "@@But this line needs to be reviewed."
 show sean smirk
 show reader sad
 "Riley is trying to kick in the door of one of the wall lockers whilst Felicity watches at a distance."
 "(Option)>Talk to Riley":
-   "Awkwardly I walk past Felicity."
-   "I receive a mild smile and nod as I pass."
-   i "Fuckin’ rat dog!"
+    "Awkwardly I walk past Felicity."
+    "I receive a mild smile and nod as I pass."
+    i "Fuckin’ rat dog!"
 l "Fuck you."
 "(Option)>'Fuck me yourself coward.'":
-   r "You can, uh, fuck me yourself."
-   r "...coward."
+    r "You can, uh, fuck me yourself."
+    r "...coward."
 "(Option)>Piss and shit a little.":
-   "I feel my pants moisten."
-   r "I fucking hate myself."
+    "I feel my pants moisten."
+    r "I fucking hate myself."
 "(Nested)>Help me!":
-   "Nobody answers."
+    "Nobody answers."

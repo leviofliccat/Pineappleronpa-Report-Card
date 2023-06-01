@@ -2,8 +2,8 @@
 This script takes in a given filepath, and creates an output file based on script formatting.
 """
 
-FILEPATH = r'Pineappleronpa-Report-Card\src\testing_formats.txt'
-NEW_FILENAME = r"Pineappleronpa-Report-Card\src\formatted_script.txt"
+FILEPATH = r'testing_formats.txt'    #r'Pineappleronpa-Report-Card\src\testing_formats.txt'
+NEW_FILENAME = r"formatted_script.txt"   #r"Pineappleronpa-Report-Card\src\formatted_script.txt"
 
 HIGHLIGHT_COLOR = "#2D70D6"
 

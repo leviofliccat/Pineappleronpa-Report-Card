@@ -123,7 +123,7 @@ label start:
     show sean sus with Dissolve(0.2)
     s "Aww… Come on… Just a bit?"
     r "I don’t think I’ll be roasting my insides today for a bit of “training”."
-    show sean neutral with Dissolve(0.2)
+    show sean with Dissolve(0.2)
     s "Hmph - fine… fine…"
     show sean discomfort with hpunch
     "As Sean turns around, a sudden jolt of pain doubles him over, likely originating from the after effects of his recent bathroom break. Clenching his stomach, he awkwardly stumbles away."
