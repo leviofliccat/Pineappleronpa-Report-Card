@@ -17,6 +17,8 @@ Sean: Oh Reader! You caught me at a bad time…
         >Hi
             # NOOOO
             Reader: hehehe
+            > Explode
+                # EXPLODE
 
     >Get me out!
         # I try to close the game...

@@ -53,7 +53,7 @@ object_codes = {
     "david_object" : "d",
     "sean_object" : "s",
     "julian_object" : "j",
-    "riley_object" : "r",
+    "riley_object" : "i",
     "mitch_object" : "m",
     "will_object" : "w",
 
