@@ -7,7 +7,7 @@ s "Oh Reader! You caught me at a bad time…"
 "{color=#2D70D6}Why is he rubbing his stomach like that?{/color}"
 "(Option)>I don't like this..":
    r "@@Please save me."
-   "{color=#2D70D6}Reader: I don't know what to do...{/color}"
+   r "{color=#2D70D6}I don't know what to do...{/color}"
    "The world ends."
 "(Nested)>Hi":
    "NOOOO"
